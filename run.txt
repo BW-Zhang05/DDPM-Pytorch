@@ -1,1 +1,13 @@
-python
+训练：
+
+  python3 scripts/run_cifar.py train --data_dir data --exp_name cifar_ddpm
+
+  采样（需要已有 checkpoint）：
+
+  python3 scripts/run_cifar.py sample --checkpoint checkpoints/cifar_ddpm/step_10000.pt
+
+  运行命令（训练 / 采样）
+
+  python3 scripts/run_lsun.py train --data_dir data/lsun --dataset lsun_church --exp_name lsun_church_ddpm --batch_size 4
+
+  python3 scripts/run_lsun.py sample --checkpoint checkpoints/lsun_church_ddpm/step_10000.pt --dataset lsun_church
