@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DDPM 训练 train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "f:/GenerativeModel/DDPM/scripts/run_cifar.py",
+            "args": ["train", "ddpm_debug"],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            }
+        },
+        {
+            "name": "DDPM 采样 sample",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "f:/GenerativeModel/DDPM/scripts/run_cifar.py",
+            "args": ["sample"],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        }
+    ]
+}

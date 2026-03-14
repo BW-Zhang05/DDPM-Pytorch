@@ -1,0 +1,8 @@
+fire
+numpy
+pillow
+scipy
+tensorboard
+torch
+torchvision
+tqdm
