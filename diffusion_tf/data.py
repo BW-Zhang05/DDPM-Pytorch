@@ -60,6 +60,10 @@ def get_dataset(name: str, data_dir: str, image_size: int, randflip: bool) -> Tu
         ds = datasets.CIFAR10(root=data_dir, train=True, download=True, transform=transform)
         return ds, 10
 
+    if name == 'cifar10_test':
+        ds = datasets.CIFAR10(root=data_dir, train=False, download=True, transform=transform)
+        return ds, 10
+
     if name.startswith('lsun_'):
         lsun_class = name.split('_', 1)[1]
         if lsun_class == 'church':

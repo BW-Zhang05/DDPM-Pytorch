@@ -11,3 +11,10 @@
   python3 scripts/run_lsun.py train --data_dir data/lsun --dataset lsun_church --exp_name lsun_church_ddpm --batch_size 4
 
   python3 scripts/run_lsun.py sample --checkpoint checkpoints/lsun_church_ddpm/step_10000.pt --dataset lsun_church
+
+python3 scripts/run_celebahq.py train \
+    --data_dir data/celebahq/data128x128 \
+    --exp_name celebahq128_ddpm \
+    --image_size 128 \
+    --batch_size 32 \
+    --max_steps 100000
