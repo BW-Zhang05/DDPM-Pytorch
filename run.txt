@@ -1,20 +1,30 @@
-训练：
+训练：cifar10
+python3 scripts/run_cifar.py train --data_dir data --exp_name cifar_ddpm
 
-  python3 scripts/run_cifar.py train --data_dir data --exp_name cifar_ddpm
+采样（需要已有 checkpoint）：
+python3 scripts/run_cifar.py sample --checkpoint checkpoints/cifar_ddpm/step_10000.pt
 
-  采样（需要已有 checkpoint）：
+评估
+python3 evaluation.py  evaluate \
+    --checkpoint checkpoints/cifar_ddpm/step_99000.pt \
+    --dataset cifar10_test \
+    --data_dir data \
+    --num_samples 10000 \
+    --eval_fid 1 \
+    --eval_is 1
 
-  python3 scripts/run_cifar.py sample --checkpoint checkpoints/cifar_ddpm/step_10000.pt
-
+  
   运行命令（训练 / 采样）
 
   python3 scripts/run_lsun.py train --data_dir data/lsun --dataset lsun_church --exp_name lsun_church_ddpm --batch_size 4
 
   python3 scripts/run_lsun.py sample --checkpoint checkpoints/lsun_church_ddpm/step_10000.pt --dataset lsun_church
 
+CeleBA-HQ
 python3 scripts/run_celebahq.py train \
+    --resume checkpoints/celebahq128_ddpm/step_23000.pt
     --data_dir data/celebahq/data128x128 \
     --exp_name celebahq128_ddpm \
     --image_size 128 \
-    --batch_size 32 \
-    --max_steps 100000
+    --batch_size 28 \
+    --max_steps 600000
